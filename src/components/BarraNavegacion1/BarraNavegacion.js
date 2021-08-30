@@ -35,29 +35,21 @@ export default function ButtonAppBar() {
               Inicio
             </Link>
           </Typography>
-          <Button className={classes.botones} color="inherit">
-            <Link
-              to="../inmueble"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              Inmueble
-            </Link>
-          </Button>
 
-          <Button className={classes.botones} color="inherit">
-            <Link
-              to="../cuenta"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              Cuenta
-            </Link>
-          </Button>
-          <Button className={classes.botones} color="inherit">
+          <Button>
             <Link
               to="../login"
               style={{ textDecoration: "none", color: "white" }}
             >
-              cerrar sesion
+              Iniciar Sesion
+            </Link>
+          </Button>
+          <Button>
+            <Link
+              to="../registro"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              registrarse
             </Link>
           </Button>
         </Toolbar>

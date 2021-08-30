@@ -21,6 +21,7 @@ import Maps from "../Maps/Maps";
 import { store } from "../../firebase/firebaseFirestore";
 import planos from "./plano.jpg";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   media: {
@@ -124,6 +125,12 @@ export default function Inmueble() {
     getPropiedades();
   }, []);
 
+  const contrato = () => {
+    alert(
+      "Su solicitud ha sido enviada, prontamente estaremos en contacto contigo"
+    );
+  };
+
   return (
     <Grid container justify="center" className={classes.allText}>
       <Grid xs={12}>
@@ -152,25 +159,6 @@ export default function Inmueble() {
       </Grid>
       <Grid item xs={7} style={{ position: "relative" }}>
         <Card className={classes.cardAbsolute}>
-          <div>
-            {color ? (
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon
-                  id="favorite"
-                  style={{ fontSize: "40px", color: "#ffa726" }}
-                  onClick={() => setColor(!color)}
-                />
-              </IconButton>
-            ) : (
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon
-                  id="favorite"
-                  style={{ fontSize: "40px" }}
-                  onClick={() => setColor(!color)}
-                />
-              </IconButton>
-            )}
-          </div>
           <Button
             className={classes.cardInnerMargin}
             size="large"
@@ -178,6 +166,43 @@ export default function Inmueble() {
             color="primary"
           >
             Agendar visita
+          </Button>
+          <Button
+            className={classes.cardInnerMargin}
+            size="large"
+            variant="contained"
+            color="primary"
+            onClick={contrato}
+          >
+            <Link
+              to="#"
+              style={{
+                textDecoration: "none",
+                color: "white",
+                paddingLeft: 21,
+                paddingRight: 21,
+              }}
+            >
+              Contrato
+            </Link>
+          </Button>
+          <Button
+            className={classes.cardInnerMargin}
+            size="large"
+            variant="contained"
+            color="primary"
+          >
+            <Link
+              to="#"
+              style={{
+                textDecoration: "none",
+                color: "white",
+                paddingLeft: 20,
+                paddingRight: 20,
+              }}
+            >
+              Compartir
+            </Link>
           </Button>
         </Card>
         <Grid item xs={12}>
